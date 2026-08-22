@@ -413,10 +413,13 @@
 
   .service-groups{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:56px clamp(32px, 5vw, 72px);
+    grid-template-columns:repeat(3, 1fr);
+    gap:56px clamp(28px, 4vw, 56px);
   }
-  @media (max-width:760px){
+  @media (max-width:900px){
+    .service-groups{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:600px){
     .service-groups{ grid-template-columns:1fr; gap:48px; }
   }
 
@@ -435,7 +438,7 @@
   }
 
   .service-item{
-    padding:18px 0;
+    padding:16px 0;
     border-top:1px solid var(--paper-line);
   }
   .service-item:last-child{ padding-bottom:0; }
@@ -444,12 +447,79 @@
     font-weight:500;
     font-size:16.5px;
     color:var(--ink);
-    margin-bottom:6px;
+    margin-bottom:0;
   }
-  .service-item p{
-    font-size:14.5px;
+
+  /* ---- Interactive Features table ---- */
+  .features-wrap{
+    margin-top:90px;
+    padding-top:70px;
+    border-top:1px solid var(--paper-line);
+  }
+  .features-eyebrow{
+    text-align:center;
+    margin-bottom:16px;
+  }
+  .features-rule{
+    width:44px; height:1px;
+    margin:0 auto 46px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .feature-table{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+    border-collapse:collapse;
+  }
+  .feature-table th{
+    text-align:left;
+    font-family:var(--label);
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    font-weight:400;
+    padding:0 0 18px;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .feature-table td{
+    padding:22px 0;
+    border-top:1px solid var(--paper-line);
+    vertical-align:top;
+    font-size:15px;
     line-height:1.6;
+  }
+  .feature-table tr:last-child td{ padding-bottom:4px; }
+  .feature-table td:first-child{
+    font-family:var(--body);
+    font-weight:500;
+    color:var(--ink);
+    width:34%;
+    padding-right:28px;
+  }
+  .feature-table td:last-child{
     color:var(--ink-soft);
+  }
+  @media (max-width:640px){
+    .feature-table, .feature-table thead, .feature-table tbody, .feature-table tr, .feature-table td{
+      display:block;
+      width:100%;
+    }
+    .feature-table thead{ display:none; }
+    .feature-table tr{
+      padding:20px 0;
+      border-top:1px solid var(--paper-line);
+    }
+    .feature-table tr:first-child{ border-top:none; }
+    .feature-table td{
+      border:none;
+      padding:0;
+    }
+    .feature-table td:first-child{
+      width:100%;
+      margin-bottom:8px;
+    }
   }
 
   /* ============================================================
@@ -738,11 +808,9 @@ Every invitation we create is designed to be felt, not just opened. It’s a hea
 
           <div class="service-item">
             <h4>Engagement &amp; Save-the-Date Sites</h4>
-            <p>Romantic single-page web invites to announce your news, share your story, and start collecting early RSVPs.</p>
           </div>
           <div class="service-item">
-            <h4>Bridal Showers &amp; Hen Parties</h4>
-            <p>Stylish web invitations featuring theme guidelines, dress code visual boards, gift registries, and location maps.</p>
+            <h4>Bridal Showers &amp; Hena Parties</h4>
           </div>
         </div>
 
@@ -752,11 +820,9 @@ Every invitation we create is designed to be felt, not just opened. It’s a hea
 
           <div class="service-item">
             <h4>Baby Showers &amp; Gender Reveals</h4>
-            <p>Warm, interactive digital invitations with gift registry links, interactive guessing games, and easy guest RSVPs.</p>
           </div>
           <div class="service-item">
             <h4>Milestone Birthdays &amp; Anniversaries</h4>
-            <p>Elegant invitations tailored for major celebrations, complete with memory timelines, location navigation, and dress code notes.</p>
           </div>
         </div>
 
@@ -766,33 +832,54 @@ Every invitation we create is designed to be felt, not just opened. It’s a hea
 
           <div class="service-item">
             <h4>Product Launches &amp; Brand Galas</h4>
-            <p>Premium, brand-aligned landing pages featuring digital entry passes, event agendas, and executive RSVP tracking.</p>
           </div>
           <div class="service-item">
             <h4>Conferences &amp; Corporate Gatherings</h4>
-            <p>Functional web invites displaying speaker lineups, schedules, Google Maps integration, and instant guest registration.</p>
-          </div>
-        </div>
-
-        <div class="service-group">
-          <h3>Interactive Features</h3>
-          <div class="group-rule" aria-hidden="true"></div>
-
-          <div class="service-item">
-            <h4>Smart RSVP &amp; Guest Management</h4>
-            <p>Real-time response tracking with custom fields — dietary restrictions, plus-ones, song requests, or company titles.</p>
-          </div>
-          <div class="service-item">
-            <h4>Branded QR Codes</h4>
-            <p>High-resolution custom QR codes for physical invitations, printed place cards, or fast entrance check-ins.</p>
-          </div>
-          <div class="service-item">
-            <h4>Post-Event Photo Hubs</h4>
-            <p>Dedicated digital gallery pages to share event photos, videos, and thank-you notes with guests after the celebration.</p>
           </div>
         </div>
 
       </div>
+
+      <div class="features-wrap">
+        <p class="eyebrow features-eyebrow">Interactive Features</p>
+        <div class="group-rule features-rule" aria-hidden="true"></div>
+
+        <table class="feature-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Included Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Custom-Tailored Design</td>
+              <td>Bespoke layout, color palette, and typography customized to match your event&rsquo;s exact visual theme and aesthetic.</td>
+            </tr>
+            <tr>
+              <td>Live Event Countdown</td>
+              <td>A dynamic timer counting down the days, hours, and minutes to build excitement leading up to the celebration.</td>
+            </tr>
+            <tr>
+              <td>Interactive Location Guide</td>
+              <td>Embedded Google Maps navigation, venue directions, and location details to help guests arrive effortlessly.</td>
+            </tr>
+            <tr>
+              <td>Smart RSVP Management</td>
+              <td>Direct online attendance tracking with custom fields for plus-ones, dietary requirements, and songs/notes.</td>
+            </tr>
+            <tr>
+              <td>Ambient Background Music</td>
+              <td>Personalized audio track that plays automatically when guests open the page to set the mood instantly.</td>
+            </tr>
+            <tr>
+              <td>Branded QR Code Package</td>
+              <td>High-resolution QR code designed to print on physical cards, welcome signs, or entry passes for quick web access.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </section>
 
